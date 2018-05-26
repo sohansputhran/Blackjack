@@ -33,7 +33,18 @@ let values = [
 let deck = createDeck();
 
 let playerCards = [getNextCard(), getNextCard()];
-console.log("Deck Length: ", deck.length);
-console.log(deck);
 
-console.log(getCardString(playerCards[0]));
+let textArea = document.getElementById('text-area');
+let newGameButton = document.getElementById('new-game-button');
+let hitButton = document.getElementById('hit-button');
+let stayButton = document.getElementById('stay-button');
+
+hitButton.style.display = 'none';
+stayButton.style.display = 'none';
+
+newGameButton.addEventListener('click', function(){
+  textArea.innerText = 'Here we go. All the Best.';
+  newGameButton.style.display = 'none';
+  hitButton.style.display = 'block';
+  stayButton.style.display = 'block';
+});
